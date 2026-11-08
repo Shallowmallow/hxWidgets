@@ -155,6 +155,10 @@ class Image extends Object {
         return imageRef.ptr.hasAlpha();
     }
 
+    public function initAlpha():Void {
+        imageRef.ptr.initAlpha();
+    }
+
     public function addAlphaChannel() {
         imageRef.ptr.setAlpha(null);
     }
