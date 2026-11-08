@@ -31,6 +31,7 @@ extern class Image extends Object {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     @:native("GetWidth")                public function getWidth():Int;
     @:native("GetHeight")               public function getHeight():Int;
+    @:native("IsOk")                    public function isOk():Bool;
     @:native("Scale")                   public function scale(width:Int, height:Int):Image;
     @:native("GetData")                 public function getData():RawPointer<cpp.UInt8>;
     @:native("GetAlpha")                public function getAlpha():RawPointer<cpp.UInt8>;

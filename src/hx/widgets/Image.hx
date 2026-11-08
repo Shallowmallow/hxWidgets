@@ -134,6 +134,11 @@ class Image extends Object {
     private function get_height():Int {
         return imageRef.ptr.getHeight();
     }
+
+    public var isOk(get, null):Bool;
+    private function get_isOk():Bool {
+        return imageRef.ptr.isOk();
+    }
     
     public function scale(width:Int, height:Int):Image {
         var r = imageRef.ptr.scale(width, height);
