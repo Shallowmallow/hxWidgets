@@ -1,8 +1,11 @@
 package hx.widgets;
 
 import cpp.Pointer;
+import cpp.RawPointer;
+import wx.widgets.Object in WxObject;
 import wx.widgets.Event in WxEvent;
 
+@:access(hx.widgets.Object)
 class Event {
 
     private var _ref:Pointer<WxEvent>;
@@ -27,6 +30,15 @@ class Event {
 
     public function stopPropagation() {
         _ref.ptr.stopPropagation();
+    }
+
+    public function isEventObject(object:Object):Bool {
+        if (object == null || object._ref == null) {
+            return false;
+        }
+        var eventObject:RawPointer<WxObject> = _ref.ptr.getEventObject();
+        var expectedObject:RawPointer<WxObject> = object._ref.rawCast();
+        return eventObject == expectedObject;
     }
 
     public function convertTo<T>(clz:Class<T>):T {
