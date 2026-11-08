@@ -66,6 +66,14 @@ class Window extends EvtHandler {
         return windowRef.ptr.isFocusable();
     }
 
+    public function hasFocus():Bool {
+        return windowRef.ptr.hasFocus();
+    }
+
+    public function reparent(parent:Window):Bool {
+        return windowRef.ptr.reparent(Window.toRaw(parent));
+    }
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Window deletion functions
     //////////////////////////////////////////////////////////////////////////////////////////////////////////

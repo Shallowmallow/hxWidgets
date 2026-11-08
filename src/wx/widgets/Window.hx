@@ -30,6 +30,7 @@ extern class Window extends EvtHandler {
     @:native("Enable")                          public function enable(enabled:Bool = true):Bool;
     @:native("IsEnabled")                       public function isEnabled():Bool;
     @:native("IsShown")                         public function isShown():Bool;
+    @:native("HasFocus")                        public function hasFocus():Bool;
     @:native("AcceptsFocus")                    public function acceptsFocus():Bool;
     @:native("IsFocusable")                     public function isFocusable():Bool;
     @:native("ShowWithEffect")                  public function showWithEffect(effect:ShowEffect, timeout:Int = 0):Bool;
@@ -60,6 +61,7 @@ extern class Window extends EvtHandler {
     // Sibling and parent management functions
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     @:native("GetParent")                       public function getParent():RawPointer<Window>;
+    @:native("Reparent")                        public function reparent(parent:RawPointer<Window>):Bool;
     @:native("Raise")                           public function raise():Void;
     @:native("Lower")                           public function lower():Void;
 
