@@ -7,6 +7,16 @@ import wx.widgets.Event in WxEvent;
 class MouseEvent extends Event implements MouseState {
     public var x(get, null):Int;
     public var y(get, null):Int;
+    public var wheelRotation(get, null):Int;
+    public var wheelDelta(get, null):Int;
+    public var linesPerAction(get, null):Int;
+    public var columnsPerAction(get, null):Int;
+    public var wheelAxis(get, null):wx.widgets.MouseWheelAxis;
+    public var isPageScroll(get, null):Bool;
+    public var shiftDown(get, null):Bool;
+    public var controlDown(get, null):Bool;
+    public var altDown(get, null):Bool;
+    public var metaDown(get, null):Bool;
 
     private function get_x():Int {
         return mouseEventRef.ptr.getX();
@@ -14,6 +24,46 @@ class MouseEvent extends Event implements MouseState {
 
     private function get_y():Int {
         return mouseEventRef.ptr.getY();
+    }
+
+    private function get_wheelRotation():Int {
+        return mouseEventRef.ptr.getWheelRotation();
+    }
+
+    private function get_wheelDelta():Int {
+        return mouseEventRef.ptr.getWheelDelta();
+    }
+
+    private function get_linesPerAction():Int {
+        return mouseEventRef.ptr.getLinesPerAction();
+    }
+
+    private function get_columnsPerAction():Int {
+        return mouseEventRef.ptr.getColumnsPerAction();
+    }
+
+    private function get_wheelAxis():wx.widgets.MouseWheelAxis {
+        return mouseEventRef.ptr.getWheelAxis();
+    }
+
+    private function get_isPageScroll():Bool {
+        return mouseEventRef.ptr.isPageScroll();
+    }
+
+    private function get_shiftDown():Bool {
+        return mouseEventRef.ptr.shiftDown();
+    }
+
+    private function get_controlDown():Bool {
+        return mouseEventRef.ptr.controlDown();
+    }
+
+    private function get_altDown():Bool {
+        return mouseEventRef.ptr.altDown();
+    }
+
+    private function get_metaDown():Bool {
+        return mouseEventRef.ptr.metaDown();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
