@@ -1,9 +1,11 @@
 package hx.widgets;
 
 import cpp.Pointer;
+import cpp.RawPointer;
 import wx.widgets.Event in WxEvent;
 import wx.widgets.Window in WxWindow;
 import wx.widgets.EvtHandler in WxEvtHandler;
+import wx.widgets.EventFilter in WxEventFilter;
 
 @:headerClassCode("
 void onEvent(wxEvent & e) {
@@ -14,6 +16,14 @@ void onEvent(wxEvent & e) {
 ")
 @:access(hx.widgets.Window)
 class EvtHandler extends Object implements Trackable {
+
+    public static function addFilter(filter:RawPointer<WxEventFilter>):Void {
+        WxEvtHandler.addFilter(filter);
+    }
+
+    public static function removeFilter(filter:RawPointer<WxEventFilter>):Void {
+        WxEvtHandler.removeFilter(filter);
+    }
 
     private var _eventMap:Map<Int, Map<Int, Array<Event->Void>>>;
     private var _pausedEvents:Map<Int, Int> = null;
