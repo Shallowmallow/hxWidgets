@@ -62,6 +62,10 @@ class Window extends EvtHandler {
         return windowRef.ptr.acceptsFocus();
     }
 
+    public function acceptsFocusFromKeyboard():Bool {
+        return windowRef.ptr.acceptsFocusFromKeyboard();
+    }
+
     public function isFocusable():Bool {
         return windowRef.ptr.isFocusable();
     }
