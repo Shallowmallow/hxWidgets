@@ -30,6 +30,8 @@ extern class Window extends EvtHandler {
     @:native("Enable")                          public function enable(enabled:Bool = true):Bool;
     @:native("IsEnabled")                       public function isEnabled():Bool;
     @:native("IsShown")                         public function isShown():Bool;
+    @:native("AcceptsFocus")                    public function acceptsFocus():Bool;
+    @:native("IsFocusable")                     public function isFocusable():Bool;
     @:native("ShowWithEffect")                  public function showWithEffect(effect:ShowEffect, timeout:Int = 0):Bool;
     @:native("HideWithEffect")                  public function hideWithEffect(effect:ShowEffect, timeout:Int = 0):Bool;
     @:native("SetFocus")                        public function setFocus():Void;

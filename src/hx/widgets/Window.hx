@@ -58,6 +58,14 @@ class Window extends EvtHandler {
         return windowRef.ptr.setFocus();
     }
 
+    public function acceptsFocus():Bool {
+        return windowRef.ptr.acceptsFocus();
+    }
+
+    public function isFocusable():Bool {
+        return windowRef.ptr.isFocusable();
+    }
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Window deletion functions
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
