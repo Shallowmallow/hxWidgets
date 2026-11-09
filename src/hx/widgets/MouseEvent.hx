@@ -3,6 +3,7 @@ package hx.widgets;
 import cpp.Pointer;
 import wx.widgets.MouseEvent in WxMouseEvent;
 import wx.widgets.Event in WxEvent;
+import hx.widgets.MouseWheelAxis;
 
 class MouseEvent extends Event implements MouseState {
     public var x(get, null):Int;
@@ -11,7 +12,7 @@ class MouseEvent extends Event implements MouseState {
     public var wheelDelta(get, null):Int;
     public var linesPerAction(get, null):Int;
     public var columnsPerAction(get, null):Int;
-    public var wheelAxis(get, null):wx.widgets.MouseWheelAxis;
+    public var wheelAxis(get, null):MouseWheelAxis;
     public var isPageScroll(get, null):Bool;
     public var shiftDown(get, null):Bool;
     public var controlDown(get, null):Bool;
@@ -42,7 +43,7 @@ class MouseEvent extends Event implements MouseState {
         return mouseEventRef.ptr.getColumnsPerAction();
     }
 
-    private function get_wheelAxis():wx.widgets.MouseWheelAxis {
+    private function get_wheelAxis():MouseWheelAxis {
         return mouseEventRef.ptr.getWheelAxis();
     }
 
